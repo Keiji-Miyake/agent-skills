@@ -105,6 +105,8 @@ skills/skill-name/
 
 ### Agent not detected during installation
 
+> **Note**: This is due to the `add-skill` tool's agent detection logic. This is not an issue with this repository (agent-skills).
+
 If your AI agent is not automatically detected by `add-skill`, you can specify it explicitly using the `-a, --agent` option:
 
 ```bash
@@ -133,6 +135,8 @@ The `add-skill` tool detects agents by checking for their configuration director
 If you have installed an agent but the directory doesn't exist, you can:
 1. Create the base directory manually: `mkdir -p ~/.gemini` (skills will be installed to `~/.gemini/skills`)
 2. Or use the `-a` option to specify the agent explicitly (recommended)
+
+**Summary**: If Gemini CLI is installed but the `~/.gemini` directory doesn't exist, `add-skill` cannot detect it. In this case, you can use the `-a gemini-cli` option to explicitly specify Gemini CLI for skill installation.
 
 ### View all available agents
 
