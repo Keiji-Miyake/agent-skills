@@ -18,6 +18,10 @@ npx add-skill Keiji-Miyake/agent-skills --skill dev-support
 
 # Install globally (available to all projects)
 npx add-skill Keiji-Miyake/agent-skills -g
+
+# Specify agent explicitly (if auto-detection doesn't work)
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot -a codex
 ```
 
 ## 📦 Available Skills
@@ -96,6 +100,43 @@ skills/skill-name/
 ├── references/           # Optional: Additional documentation
 └── assets/              # Optional: Templates and resources
 ```
+
+## 🔧 Troubleshooting
+
+### Agent not detected during installation
+
+If your AI agent is not automatically detected by `add-skill`, you can specify it explicitly using the `-a, --agent` option:
+
+```bash
+# For Gemini CLI
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+
+# For GitHub Copilot
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot
+
+# For multiple agents
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
+```
+
+**Why isn't my agent detected?**
+
+The `add-skill` tool detects agents by checking for their configuration directories:
+
+| Agent | Detection Directory |
+|-------|-------------------|
+| Gemini CLI | `~/.gemini` |
+| GitHub Copilot | `~/.copilot` or `.github` |
+| Codex | `~/.codex` |
+| Claude Code | `~/.claude` |
+| Cursor | `~/.cursor` |
+
+If you have installed an agent but the directory doesn't exist, you can:
+1. Create the directory manually: `mkdir -p ~/.gemini/skills`
+2. Or use the `-a` option to specify the agent explicitly
+
+### View all available agents
+
+To see all supported agents and their installation paths, check the [Installation Paths](#-installation-paths) section above.
 
 ## 🤝 Contributing
 
