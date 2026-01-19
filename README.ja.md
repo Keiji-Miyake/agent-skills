@@ -40,6 +40,38 @@ npx add-skill Keiji-Miyake/agent-skills -g
 
 **詳細：** [skills/dev-support/README.ja.md](./skills/dev-support/README.ja.md)
 
+### architect
+
+**要件定義とシステム設計の専門家。**
+
+- ✅ 抽象的な要求を技術仕様 (`SPEC.md`) に変換
+- ✅ Mermaid図を用いたシステム可視化
+- ✅ プロジェクトに最適な技術選定
+
+### developer
+
+**実装とコーディングの専門家。**
+
+- ✅ 仕様書に基づく高品質な実装
+- ✅ プロジェクト規約と構造の遵守
+- ✅ ポリグロット対応（TS, Python, Go, Rust等）
+
+### qa
+
+**品質保証とテストの専門家。**
+
+- ✅ 「壊す」ためのテスト計画策定
+- ✅ エッジケースの網羅的検証
+- ✅ 自動テストコードの実装
+
+### devops
+
+**インフラ構築とデプロイの専門家。**
+
+- ✅ IaC (Infrastructure as Code) の推進
+- ✅ CI/CDパイプラインの構築
+- ✅ プラットフォーム非依存の最適化
+
 ## 🎯 インストールパス
 
 | エージェント | プロジェクトパス | グローバルパス |
