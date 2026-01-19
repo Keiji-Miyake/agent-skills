@@ -38,7 +38,7 @@ agent-skills/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/agent-skills.git
+git clone https://github.com/Keiji-Miyake/agent-skills.git
 cd agent-skills
 
 # Install dependencies
@@ -71,7 +71,7 @@ name: my-skill-name
 description: Brief description (1-1024 chars)
 license: MIT
 metadata:
-  author: Your Name
+  author: Keiji Miyake
   version: "1.0"
 ---
 
@@ -173,7 +173,7 @@ Update `metadata.version` in SKILL.md:
 
 ```yaml
 metadata:
-  author: Your Name
+  author: Keiji Miyake
   version: "1.1"  # Increment version
 ```
 
@@ -310,10 +310,10 @@ npm run validate
 
 ```bash
 # Create repository on GitHub
-gh repo create your-username/agent-skills --public
+gh repo create Keiji-Miyake/agent-skills --public
 
 # Push
-git remote add origin https://github.com/your-username/agent-skills.git
+git remote add origin https://github.com/Keiji-Miyake/agent-skills.git
 git push -u origin main
 git push --tags
 ```

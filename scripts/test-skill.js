@@ -52,10 +52,10 @@ console.log();
 // Check for additional files
 console.log(chalk.bold('Additional Files:'));
 const hasReadme = fs.existsSync(path.join(skillDir, 'README.md'));
-const hasScripts = fs.existsSync(path.join(skillDir, 'scripts')) && 
-                  fs.readdirSync(path.join(skillDir, 'scripts')).length > 1; // More than .gitkeep
+const hasScripts = fs.existsSync(path.join(skillDir, 'scripts')) &&
+  fs.readdirSync(path.join(skillDir, 'scripts')).length > 1; // More than .gitkeep
 const hasReferences = fs.existsSync(path.join(skillDir, 'references')) &&
-                     fs.readdirSync(path.join(skillDir, 'references')).length > 0;
+  fs.readdirSync(path.join(skillDir, 'references')).length > 0;
 
 console.log(chalk.gray('  README.md:'), hasReadme ? chalk.green('✓') : chalk.yellow('✗'));
 console.log(chalk.gray('  scripts/:'), hasScripts ? chalk.green('✓') : chalk.gray('—'));
@@ -80,9 +80,9 @@ console.log();
 // Installation instructions
 console.log(chalk.bold('Installation Commands:'));
 console.log(chalk.gray('  Project-level:'));
-console.log(chalk.cyan(`    npx add-skill your-username/agent-skills --skill ${skillName}`));
+console.log(chalk.cyan(`    npx add-skill Keiji-Miyake/agent-skills --skill ${skillName}`));
 console.log(chalk.gray('  Global:'));
-console.log(chalk.cyan(`    npx add-skill your-username/agent-skills --skill ${skillName} -g`));
+console.log(chalk.cyan(`    npx add-skill Keiji-Miyake/agent-skills --skill ${skillName} -g`));
 console.log();
 
 // Token efficiency analysis

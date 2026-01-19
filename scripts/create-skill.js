@@ -41,7 +41,7 @@ name: ${skillName}
 description: Brief description of what this skill does and when to use it
 license: MIT
 metadata:
-  author: Your Name
+  author: Keiji Miyake
   version: "1.0"
 ---
 
@@ -97,7 +97,7 @@ const readmeMd = `# ${skillName.split('-').map(w => w.charAt(0).toUpperCase() + 
 [Brief description of the skill]
 
 **Version**: 1.0  
-**Author**: Your Name
+**Author**: Keiji Miyake
 
 ## Overview
 
@@ -107,10 +107,10 @@ const readmeMd = `# ${skillName.split('-').map(w => w.charAt(0).toUpperCase() + 
 
 \`\`\`bash
 # Install with add-skill
-npx add-skill your-username/agent-skills --skill ${skillName}
+npx add-skill Keiji-Miyake/agent-skills --skill ${skillName}
 
 # Install globally
-npx add-skill your-username/agent-skills --skill ${skillName} -g
+npx add-skill Keiji-Miyake/agent-skills --skill ${skillName} -g
 \`\`\`
 
 ## Usage

@@ -21,9 +21,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/agent-skills.git"
+    "url": "git+https://github.com/Keiji-Miyake/agent-skills.git"
   },
-  "author": "Your Name",
+  "author": "Keiji Miyake",
   "license": "MIT",
   "devDependencies": {
     "glob": "^10.3.10",

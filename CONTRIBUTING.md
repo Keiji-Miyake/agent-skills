@@ -5,7 +5,7 @@ Thank you for your interest in contributing! This document provides guidelines f
 ## Getting Started
 
 1. Fork this repository
-2. Clone your fork: `git clone https://github.com/your-username/agent-skills.git`
+2. Clone your fork: `git clone https://github.com/Keiji-Miyake/agent-skills.git`
 3. Create a branch: `git checkout -b feature/my-new-skill`
 4. Install dependencies: `npm install`
 
@@ -34,7 +34,7 @@ name: my-awesome-skill
 description: Brief description of what this skill does and when to use it
 license: MIT
 metadata:
-  author: Your Name
+  author: Keiji Miyake
   version: "1.0"
 ---
 

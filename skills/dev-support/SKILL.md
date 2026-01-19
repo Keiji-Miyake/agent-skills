@@ -1,6 +1,6 @@
 ---
 name: dev-support
-description: Project management skill optimized for short, interruptible development sessions. Use this when you need to design features, create documentation (specs, architecture, test plans, roadmaps), manage work context during interruptions, or resume work after a break. Supports any technology stack and helps maintain productivity across fragmented work sessions.
+description: 短時間で中断可能な開発セッションに最適化されたプロジェクト管理スキル。機能設計、ドキュメント作成（要件、アーキテクチャ、テスト計画、ロードマップ）、中断時のコンテキスト管理、作業再開時に使用します。あらゆる技術スタックに対応し、断片化された作業セッションでも生産性を維持するのに役立ちます。
 license: MIT License
 metadata:
   author: Keiji Miyake
@@ -9,222 +9,222 @@ metadata:
 
 # Dev Support Skill
 
-This skill helps you manage development projects across short, interruptible work sessions. It emphasizes documentation-driven development and context preservation to minimize productivity loss when switching between tasks.
+このスキルは、短時間で中断される可能性のある複数の作業セッションにわたって開発プロジェクトを管理するのを支援します。ドキュメント駆動開発と、タスク間の切り替えによる生産性の低下を最小限に抑えるためのコンテキスト保持を重視しています。
 
-## Core Principles
+## 核となる原則
 
-- **Two-tier documentation**: Project-level (`docs/`) + Feature-level (`docs/dev/[feature-name]/`)
-- **Critical file**: CONTEXT.md is the most important for interruption/resumption
-- **Technology agnostic**: Works with any programming language or framework
-- **Flexible sessions**: Always ask user for session duration (default: 30 minutes)
-- **Manual-first approach**: Use standard commands unless user explicitly requests helper scripts
-- **Architecture consistency**: Ensure features align with project architecture
+- **二層構造のドキュメント**: プロジェクトレベル (`docs/`) + 機能レベル (`docs/dev/[feature-name]/`)
+- **最優先ファイル**: `CONTEXT.md` は中断と再開において最も重要なファイルです
+- **技術スタック不問**: あらゆるプログラミング言語やフレームワークで動作します
+- **柔軟なセッション**: 常にユーザーにセッション時間を尋ねてください（デフォルト: 30分）
+- **マニュアル優先**: ユーザーが明示的にヘルパースクリプトを要求しない限り、標準的なコマンドを使用してください
+- **アーキテクチャの整合性**: 新機能がプロジェクトのアーキテクチャと整合していることを確認してください
 
-## Session Start Workflow
+## セッション開始ワークフロー
 
-1. **Ask session duration**: "How long is this session? (default: 30 minutes)"
-2. **Check project documentation structure**:
-   - Look for `docs/README.md` (documentation index)
-   - Check `ARCHITECTURE.md` (project-level architecture)
-   - Verify `docs/dev/README.md` (active features list)
-3. **Find and read CONTEXT.md** files in `docs/dev/**/`
-4. **Summarize last session**:
-   - Date/time and duration
-   - Task being worked on
-   - Completed vs incomplete items
-   - Next actions from CONTEXT.md
-5. **Check ROADMAP.md** if exists, show overall progress
-6. **Ask user**: "Continue from where you left off?"
-7. **Handle existing projects**: If no structured docs exist, propose project-wide documentation setup
+1. **セッション時間の確認**: 「今回のセッション時間はどのくらいですか？（デフォルト: 30分）」
+2. **プロジェクトのドキュメント構造を確認**:
+   - `docs/README.md` (ドキュメントインデックス) を探す
+   - `ARCHITECTURE.md` (プロジェクトレベルのアーキテクチャ) を確認
+   - `docs/dev/README.md` (進行中の機能リスト) を検証
+3. **`docs/dev/**/` 内の `CONTEXT.md` ファイルを探して読み込む**
+4. **前回のセッションを要約**:
+   - 日時と所要時間
+   - 取り組んでいたタスク
+   - 完了した項目と未完了の項目
+   - `CONTEXT.md` からの次のアクション
+5. **`ROADMAP.md` が存在する場合、全体の進捗を表示**
+6. **ユーザーに確認**: 「前回の続きから再開しますか？」
+7. **既存プロジェクトへの対応**: 構造化されたドキュメントが存在しない場合、プロジェクト全体のドキュメントセットアップを提案してください
 
-## New Feature Development
+## 新機能開発
 
-1. **Check project architecture alignment**:
-   - Read `ARCHITECTURE.md` or `docs/architecture/overview.md`
-   - Verify feature fits within existing system design
-   - Identify affected components
-2. **Inform user** that `docs/dev/[feature-name]/` directory is recommended
-3. **Propose creating**:
-   - **SPEC.md**: Requirements, user stories, acceptance criteria
-   - **DESIGN.md**: Architecture, technical decisions, API design
-   - **TEST_PLAN.md**: Test cases, validation methods
-   - **ROADMAP.md**: Implementation phases, milestones, progress tracking
-   - **CONTEXT.md**: Work context (most critical for resumption)
-4. **After approval**, create documents manually:
+1. **プロジェクトアーキテクチャとの整合性確認**:
+   - `ARCHITECTURE.md` または `docs/architecture/overview.md` を読み込む
+   - 機能が既存のシステム設計に適合しているか検証
+   - 影響を受けるコンポーネントを特定
+2. **ユーザーへの通知**: `docs/dev/[feature-name]/` ディレクトリの作成を推奨してください
+3. **作成の提案**:
+   - **SPEC.md**: 要件、ユーザーストーリー、受入れ条件
+   - **DESIGN.md**: アーキテクチャ、技術的決定、API設計
+   - **TEST_PLAN.md**: テストケース、検証方法
+   - **ROADMAP.md**: 実装フェーズ、マイルストーン、進捗管理
+   - **CONTEXT.md**: 作業コンテキスト（再開に最も重要）
+4. **承認後、手動でドキュメントを作成**:
    - `mkdir -p docs/dev/[feature-name]`
-   - Create each file with appropriate templates
-5. **Register feature**:
-   - Add to `docs/dev/README.md` with status, priority, dependencies
-   - Update project ROADMAP if exists
-6. **Technology stack tracking**:
-   - Ask: "What technology stack is this project using?"
-   - Record in `.meta.json`: `{"feature": "name", "stack": "stack", "createdAt": "date"}`
-   - Or read from existing DESIGN.md if available
-7. **Architecture decision recording**:
-   - If significant technical decision made, offer to create ADR in `docs/architecture/decisions/`
+   - 各ファイルを適切なテンプレートで作成
+5. **機能の登録**:
+   - `docs/dev/README.md` にステータス、優先度、依存関係を追加
+   - プロジェクトの `ROADMAP.md` があれば更新
+6. **技術スタックの追跡**:
+   - 質問: 「このプロジェクトで使用している技術スタックは何ですか？」
+   - `.meta.json` に記録: `{"feature": "name", "stack": "stack", "createdAt": "date"}`
+   - または、既存の `DESIGN.md` から読み取る
+7. **アーキテクチャ決定の記録**:
+   - 重要な技術的決定が行われた場合、`docs/architecture/decisions/` に ADR を作成することを提案
 
-## During Work Session
+## セッション中の動作
 
-- **Monitor time**: Inform user of remaining time periodically
-- **5-minute warning**: "5 minutes left. Prepare to update CONTEXT.md"
-- **Suggest updates**:
-  - DESIGN.md when architecture changes
-  - TEST_PLAN.md when adding test cases
-  - CONTEXT.md for technical decisions
-- **Task splitting**: Recommend breaking tasks if they exceed session time
+- **時間の監視**: 定期的に残り時間をユーザーに通知
+- **5分前の警告**: 「残り5分です。CONTEXT.md の更新を準備してください」
+- **更新の提案**:
+  - アーキテクチャが変更された場合の `DESIGN.md`
+  - テストケースを追加した場合の `TEST_PLAN.md`
+  - 技術的決定を行った場合の `CONTEXT.md`
+- **タスクの分割**: タスクがセッション時間を超える場合は、分割を推奨
 
-## Session End (CRITICAL)
+## セッション終了 (重要)
 
-**This is mandatory - never skip this step:**
+**これは必須ステップです。決してスキップしないでください：**
 
-1. **Record actual time**: "This session was [X] minutes"
-2. **Update CONTEXT.md** with:
-   - Last session date/time
-   - Session duration (actual time worked)
-   - Current work details
-   - Progress: completed/in-progress/not-started
-   - Next session actions (priority order)
-   - Technical notes, discoveries, issues
-   - List of changed files
-   - Environment restoration steps (if needed)
-3. **Update ROADMAP.md** progress percentage
-4. **Update project-level docs if needed**:
-   - `docs/dev/README.md`: Update feature status
-   - `ARCHITECTURE.md`: If architecture changed
-   - Create ADR in `docs/architecture/decisions/` if significant decision made
-5. **Encourage Git commit** (WIP commits are acceptable)
+1. **実際の時間を記録**: 「今回のセッションは [X] 分でした」
+2. **`CONTEXT.md` を以下で更新**:
+   - 前回のセッション日時
+   - セッション時間（実際の作業時間）
+   - 現在の作業の詳細
+   - 進捗状況: 完了/進行中/未着手
+   - 次のセッションのアクション（優先順位順）
+   - 技術メモ、発見、問題点
+   - 変更されたファイルのリスト
+   - 環境復元手順（必要な場合）
+3. **`ROADMAP.md` の進捗率を更新**
+4. **必要に応じてプロジェクトレベルのドキュメントを更新**:
+   - `docs/dev/README.md`: 機能ステータスの更新
+   - `ARCHITECTURE.md`: アーキテクチャが変更された場合
+   - 重要な決定があった場合、`docs/architecture/decisions/` に ADR を作成
+5. **Git コミットを推奨**（WIP コミットも可）
 
-### CONTEXT.md Template
+### CONTEXT.md テンプレート
 
 ```markdown
-## Last Session
-- Date/time: [timestamp]
-- Duration: [actual work time]
-- Task: [what you worked on]
+## 前回のセッション
+- 日時: [タイムスタンプ]
+- 所要時間: [実際の作業時間]
+- タスク: [取り組んだ内容]
 
-## Progress
-- Completed: [finished work]
-- In Progress: [current work]
-- Blocked: [issues]
+## 進捗
+- 完了: [完了した作業]
+- 進行中: [現在の作業]
+- ブロック中: [問題点]
 
-## Next Session (Priority Order)
-1. [Action 1] - Priority: High
-2. [Action 2] - Priority: Medium
+## 次のセッション (優先順位順)
+1. [アクション 1] - 優先度: 高
+2. [アクション 2] - 優先度: 中
 
-## Technical Notes
-- [Key decisions and discoveries]
+## 技術メモ
+- [主要な決定事項や発見]
 
-## Changed Files
-- [List of modified files]
+## 変更されたファイル
+- [修正されたファイルのリスト]
 
-## Environment Restoration
-### Setup Commands
-[Dependencies, environment variables, etc.]
+## 環境の復元
+### セットアップコマンド
+[依存関係、環境変数など]
 
-### Runtime Environment
-- Node.js: [version]
-- Other tools: [versions]
+### 実行環境
+- Node.js: [バージョン]
+- その他のツール: [バージョン]
 
-### Hardware State (IoT/Electronics)
-- GPIO pins: [connection status]
+### ハードウェア状態 (IoT/電子工作)
+- GPIO ピン: [接続状態]
 ```
 
-## Technology Stack Management
+## 技術スタック管理
 
-**Priority order for determining stack:**
-1. Read from `.meta.json` in feature directory if exists
-2. Infer from DESIGN.md content if available
-3. Ask user: "What technology stack is this project using?"
-4. Record in `.meta.json` for future sessions
+**技術スタックを決定する優先順位：**
+1. 機能ディレクトリの `.meta.json` があれば読み取る
+2. `DESIGN.md` の内容から推測する
+3. ユーザーに聞く: 「このプロジェクトで使用している技術スタックは何ですか？」
+4. 将来のセッションのために `.meta.json` に記録する
 
-## Document Creation Support
+## ドキュメント作成サポート
 
-Help users organize information into structured documentation:
-- Transform specs into SPEC.md format
-- Compile design discussions into DESIGN.md
-- Format test cases into TEST_PLAN.md tables
-- Structure work plans into ROADMAP.md phases
+ユーザーが情報を構造化されたドキュメントに整理するのを手伝ってください：
+- 要件を `SPEC.md` 形式に変換
+- 設計に関する議論を `DESIGN.md` にまとめる
+- テストケースを `TEST_PLAN.md` の表形式に整理
+- 作業計画を `ROADMAP.md` のフェーズに構造化
 
-## Existing Project Integration
+## 既存プロジェクトへの統合
 
-When working with projects without structured documentation:
-1. **Assess current state**:
-   - Check for existing docs (README, docs/, wiki, etc.)
-   - Identify project maturity level (new/growing/mature)
-2. **Propose documentation structure** based on project size:
-   - **Small/New**: Minimal structure (README + docs/dev/)
-   - **Growing**: Add ARCHITECTURE.md + docs/dev/README.md
-   - **Mature**: Full structure with architecture/, guides/, api/
-3. **If user declines full structure**:
-   - Create minimal CONTEXT.md in appropriate location
-   - Ask user where to store session context
-   - Respect user preferences but recommend best practices
-4. **Migration path**: Offer to gradually evolve docs as project grows
+構造化されたドキュメントがないプロジェクトで作業する場合：
+1. **現在の状態を評価**:
+   - 既存のドキュメント（README, docs/, wiki など）を確認
+   - プロジェクトの成熟度を特定（新規/成長中/成熟）
+2. **プロジェクト規模に基づいたドキュメント構造を提案**:
+   - **小規模/新規**: 最小限の構造 (README + docs/dev/)
+   - **成長中**: ARCHITECTURE.md + docs/dev/README.md を追加
+   - **成熟**: architecture/, guides/, api/ を含む完全な構造
+3. **ユーザーが完全な構造を拒否した場合**:
+   - 適切な場所に最小限の `CONTEXT.md` を作成
+   - セッションコンテキストをどこに保存するかユーザーに尋ねる
+   - ユーザーの好みを尊重しつつ、ベストプラクティスを推奨
+4. **移行パス**: プロジェクトの成長に合わせて徐々にドキュメントを進化させることを提案
 
-## Helper Scripts (Advanced Use Only)
+## ヘルパースクリプト (アドバンスド)
 
-If `scripts/manage-dev.ts` exists **and user explicitly requests it**:
-- Can assist with automated directory/file creation
-- Provides progress summaries
-- Generates templates
+`scripts/manage-dev.ts` が存在し、**かつユーザーが明示的に要求した場合**:
+- ディレクトリ/ファイルの自動作成を支援
+- 進捗サマリーを提供
+- テンプレートを生成
 
-**Default behavior**: Always use standard commands (`mkdir`, direct file creation) unless user says otherwise.
+**デフォルトの動作**: ユーザーから指示がない限り、常に標準的なコマンド (`mkdir`, 直接のファイル作成) を使用してください。
 
-## Best Practices
+## ベストプラクティス
 
-- **Flexible sessions**: Discuss duration with user (15/30/45/60/90 min options)
-- **Reserve documentation time**: Always keep 5-10 minutes before session end
-- **CONTEXT.md is mandatory**: It's a message to your future self
-- **Split tasks appropriately**: Must complete within session time
-- **Commit frequently**: Small commits, WIP is OK
-- **Document decisions**: Always record technical decision rationale
-- **Documentation-first**: Write docs before code when possible
-- **Record actual time**: Log actual work time in CONTEXT.md
-- **Two-tier thinking**: Consider both project-level and feature-level impacts
-- **Architecture alignment**: Verify new features fit existing architecture
-- **ADR for big decisions**: Create Architecture Decision Records for significant choices
+- **柔軟なセッション**: ユーザーと所要時間について相談してください (15/30/45/60/90 分のオプション)
+- **ドキュメント作成時間の確保**: 常にセッション終了の 5-10 分前には作業を切り上げてください
+- **CONTEXT.md は必須**: これは未来の自分へのメッセージです
+- **タスクの適切な分割**: セッション時間内に完了するようにしてください
+- **頻繁なコミット**: 小さなコミット、WIP も OK です
+- **決定事項の文書化**: 常に技術的決定の根拠を記録してください
+- **ドキュメント優先**: 可能な限りコードの前にドキュメントを書いてください
+- **実際の時間を記録**: `CONTEXT.md` に実際の作業時間を記録してください
+- **二層構造の思考**: プロジェクト全体と機能レベルの両方への影響を考慮してください
+- **アーキテクチャの整合性**: 新機能が既存のアーキテクチャに適合するか検証してください
+- **大きな決定には ADR を**: 重要な選択には Architecture Decision Records を作成してください
 
-Focus on workflow and documentation structure, not specific tools.
+特定のツールではなく、ワークフローとドキュメント構造に焦点を当ててください。
 
-## Project Documentation Structure
+## プロジェクトドキュメント構造
 
-### Recommended Full Structure
+### 推奨される完全な構造
 
 ```
 project-root/
-├── README.md                    # Project overview (required)
-├── ARCHITECTURE.md             # System-wide architecture
-├── CONTRIBUTING.md             # Contribution guidelines
-├── CHANGELOG.md                # Release history
+├── README.md                    # プロジェクト概要 (必須)
+├── ARCHITECTURE.md             # システム全体のアーキテクチャ
+├── CONTRIBUTING.md             # 貢献ガイドライン
+├── CHANGELOG.md                # リリース履歴
 │
 ├── docs/
-│   ├── README.md              # Documentation index
-│   ├── getting-started/       # Onboarding guides
+│   ├── README.md              # ドキュメントインデックス
+│   ├── getting-started/       # オンボーディングガイド
 │   │   ├── installation.md
 │   │   ├── quickstart.md
 │   │   └── configuration.md
 │   │
-│   ├── architecture/          # System design
-│   │   ├── overview.md       # System overview
-│   │   ├── components.md     # Component architecture
-│   │   ├── data-flow.md      # Data flow diagrams
+│   ├── architecture/          # システム設計
+│   │   ├── overview.md       # システム概要
+│   │   ├── components.md     # コンポーネント構成
+│   │   ├── data-flow.md      # データフロー図
 │   │   └── decisions/        # ADR (Architecture Decision Records)
 │   │       ├── 001-database-choice.md
 │   │       ├── 002-api-design.md
 │   │       └── template.md
 │   │
-│   ├── api/                   # API specifications
+│   ├── api/                   # API 仕様
 │   │   ├── rest-api.md
 │   │   └── graphql-schema.md
 │   │
-│   ├── guides/                # Developer guides
+│   ├── guides/                # 開発者ガイド
 │   │   ├── coding-standards.md
 │   │   ├── testing.md
 │   │   └── deployment.md
 │   │
-│   └── dev/                   # Active feature development
-│       ├── README.md          # Active features index
-│       └── [feature-name]/    # Per-feature docs
+│   └── dev/                   # アクティブな機能開発
+│       ├── README.md          # アクティブな機能インデックス
+│       └── [feature-name]/    # 機能ごとのドキュメント
 │           ├── SPEC.md
 │           ├── DESIGN.md
 │           ├── TEST_PLAN.md
@@ -232,33 +232,33 @@ project-root/
 │           └── CONTEXT.md
 ```
 
-### Minimal Structure (Small Projects)
+### 最小限の構造 (小規模プロジェクト)
 
 ```
 project-root/
-├── README.md                    # Project overview
-├── ARCHITECTURE.md             # Basic architecture notes
+├── README.md                    # プロジェクト概要
+├── ARCHITECTURE.md             # 基本的なアーキテクチャメモ
 └── docs/
     └── dev/
-        ├── README.md          # Active features
+        ├── README.md          # アクティブな機能
         └── [feature-name]/
             ├── SPEC.md
             ├── DESIGN.md
             └── CONTEXT.md
 ```
 
-### Documentation Maturity Levels
+### ドキュメント成熟度レベル
 
-**Level 1 - Startup** (< 3 months, 1-2 developers):
+**レベル 1 - Startup** (3ヶ月未満、1-2人の開発者):
 - README.md
 - docs/dev/[feature]/CONTEXT.md
 
-**Level 2 - Growing** (3-12 months, 2-5 developers):
+**レベル 2 - Growing** (3-12ヶ月、2-5人の開発者):
 - + ARCHITECTURE.md
 - + docs/dev/README.md
 - + docs/getting-started/
 
-**Level 3 - Mature** (> 1 year, 5+ developers):
+**レベル 3 - Mature** (1年以上、5人以上の開発者):
 - + docs/architecture/decisions/ (ADRs)
 - + docs/guides/
 - + docs/api/

@@ -1,81 +1,81 @@
 # Dev Support Skill
 
-プロジェクト管理スキル - 短時間で中断可能な開発セッションに最適化。
+Project management skill - optimized for short, interruptible development sessions.
 
-**バージョン**: 2.2  
-**評価**: S (Excellent) - 99%達成度
+**Version**: 2.2  
+**Rating**: S (Excellent) - 99% Achievement
 
-## 概要
+## Overview
 
-このスキルは、作業の中断・再開が頻繁に発生する開発環境において、コンテキストの喪失を最小化します。
-**技術スタック不問**で、あらゆるプロジェクトで使用できます。
-**作業時間は柔軟に対応**：15分/30分/60分/90分など、あなたのスケジュールに合わせて調整可能。
+This skill minimizes context loss in development environments where interruptions and resumptions occur frequently.
+**Technology agnostic** and can be used in any project.
+**Flexible work sessions**: 15/30/45/60/90 minutes, adjustable to your schedule.
 
-### v2.2の新機能
-- **二層ドキュメント構造**: プロジェクト全体とfeature個別のドキュメント管理
-- **アーキテクチャ整合性**: 新機能が既存設計と整合するか自動チェック
-- **ADR（Architecture Decision Records）**: 技術的決定の記録と追跡
-- **Feature依存関係管理**: 開発中feature間の関係を可視化
-- **ドキュメント成熟度対応**: プロジェクト規模に応じた構造提案（Startup/Growing/Mature）
+### New in v2.2
+- **Two-tier documentation structure**: Documentation management for the entire project and individual features.
+- **Architecture alignment**: Automatically check if new features align with existing design.
+- **ADR (Architecture Decision Records)**: Record and track technical decisions.
+- **Feature dependency management**: Visualize relationships between features in development.
+- **Document maturity support**: Recommend documentation structures based on project scale (Startup/Growing/Mature).
 
-### 主な機能
-- **仕様設計サポート**: SPEC.mdで要件を整理
-- **アーキテクチャ設計**: DESIGN.mdで技術選定と構成を記録
-- **プロジェクト全体設計**: ARCHITECTURE.mdでシステム全体を管理
-- **テスト計画**: TEST_PLAN.mdでテストケースを管理
-- **進捗管理**: ROADMAP.mdでマイルストーンを追跡
-- **作業コンテキスト保存**: CONTEXT.mdで中断・再開をサポート
-- **柔軟な時間管理**: セッション時間をカスタマイズ可能
+### Key Features
+- **Specification design support**: Organize requirements in `SPEC.md`.
+- **Architecture design**: Record technical choices and configuration in `DESIGN.md`.
+- **Project-wide design**: Manage the entire system in `ARCHITECTURE.md`.
+- **Test planning**: Manage test cases in `TEST_PLAN.md`.
+- **Progress management**: Track milestones in `ROADMAP.md`.
+- **Work context preservation**: Support interruption/resumption with `CONTEXT.md`.
+- **Flexible time management**: Customizable session times.
 
-## インストール
+## Installation
 
 ```bash
-# スキルディレクトリが存在しない場合は作成
+# Create skill directory if it doesn't exist
 mkdir -p ~/.gemini/skills/dev-support
 
-# このディレクトリの内容をコピー
+# Copy the contents of this directory
 cp -r . ~/.gemini/skills/dev-support/
 
-# Antigravity用シンボリックリンク（必要に応じて）
+# Optional: Symbolic link for Antigravity
 ln -s ~/.gemini/skills/dev-support ~/.gemini/antigravity/skills/dev-support
 ```
 
-## 使い方
+## Usage
 
-### 1. プロジェクトフォルダで作業開始
+### 1. Start work in the project folder
 
 ```bash
 cd ~/my-project
 
-# AI エージェントを起動
-gh copilot  # または gemini cli, antigravity など
+# Start the AI agent
+gh copilot  # or gemini cli, antigravity, etc.
 ```
 
-### 2. セッション時間を設定
+### 2. Set session time
 
 ```
-> 作業を再開。今回は45分で。
+> Resume work. 45 minutes this time.
 ```
 
-エージェントが`docs/dev/**/CONTEXT.md`を読み、前回の作業状況を伝えます。
+The agent will read `docs/dev/**/CONTEXT.md` and tell you the status of the last session.
 
-### 3. 新機能開発を開始
-
-```
-> 新機能「ユーザープロフィール編集」を60分で開発開始
-```
-
-### 4. 作業を中断
+### 3. Start new feature development
 
 ```
-> 作業を中断
+> Start developing "user profile editing" for 60 minutes.
 ```
 
-詳細は`SKILL.md`をご覧ください。
+### 4. Interrupt work
 
-## 補助ツール（オプション）
+```
+> Interrupt work.
+```
 
-`scripts/manage-dev.ts`でドキュメント管理を補助できます。
+See `SKILL.md` for more details.
+
+## Helper Tools (Optional)
+
+You can assist document management with `scripts/manage-dev.ts`.
 
 ```bash
 cd ~/.gemini/skills/dev-support/scripts
@@ -83,14 +83,14 @@ pnpm install
 pnpm tsx manage-dev.ts summary
 ```
 
-## 対応エージェント
+## Supported Agents
 
 - GitHub Copilot CLI
 - Gemini CLI
 - Anthropic Claude (Claude Code, Claude.ai, API)
 - Antigravity
-- その他の互換エージェント
+- Other compatible agents
 
-## ライセンス
+## License
 
 MIT License

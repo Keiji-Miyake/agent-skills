@@ -1,5 +1,8 @@
 # Agent Skills Collection
 
+[日本語版はこちら](./README.ja.md)
+
+
 A collection of reusable agent skills for AI coding assistants. Compatible with GitHub Copilot CLI, Claude Code, Codex, Cursor, and other AI agents that support the [Agent Skills specification](https://agentskills.io).
 
 ## 🚀 Quick Start
@@ -8,13 +11,13 @@ Install skills using [add-skill](https://github.com/vercel-labs/add-skill):
 
 ```bash
 # Install all skills
-npx add-skill your-username/agent-skills
+npx add-skill Keiji-Miyake/agent-skills
 
 # Install specific skill
-npx add-skill your-username/agent-skills --skill dev-support
+npx add-skill Keiji-Miyake/agent-skills --skill dev-support
 
 # Install globally (available to all projects)
-npx add-skill your-username/agent-skills -g
+npx add-skill Keiji-Miyake/agent-skills -g
 ```
 
 ## 📦 Available Skills
