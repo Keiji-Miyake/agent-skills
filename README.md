@@ -122,17 +122,17 @@ npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
 
 The `add-skill` tool detects agents by checking for their configuration directories:
 
-| Agent | Detection Directory |
-|-------|-------------------|
-| Gemini CLI | `~/.gemini` |
-| GitHub Copilot | `~/.copilot` or `.github` |
-| Codex | `~/.codex` |
-| Claude Code | `~/.claude` |
-| Cursor | `~/.cursor` |
+| Agent | Detection Directory | Notes |
+|-------|-------------------|-------|
+| Gemini CLI | `~/.gemini` | Checks for base directory |
+| GitHub Copilot | `~/.copilot` or `.github` | Checks for either directory |
+| Codex | `~/.codex` | Checks for base directory |
+| Claude Code | `~/.claude` | Checks for base directory |
+| Cursor | `~/.cursor` | Checks for base directory |
 
 If you have installed an agent but the directory doesn't exist, you can:
-1. Create the directory manually: `mkdir -p ~/.gemini/skills`
-2. Or use the `-a` option to specify the agent explicitly
+1. Create the base directory manually: `mkdir -p ~/.gemini` (skills will be installed to `~/.gemini/skills`)
+2. Or use the `-a` option to specify the agent explicitly (recommended)
 
 ### View all available agents
 

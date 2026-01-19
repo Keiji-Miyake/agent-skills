@@ -151,17 +151,17 @@ npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
 
 `add-skill`ツールは、各エージェントの設定ディレクトリの存在を確認してエージェントを検出します：
 
-| エージェント | 検出ディレクトリ |
-|-------|-------------------|
-| Gemini CLI | `~/.gemini` |
-| GitHub Copilot | `~/.copilot` または `.github` |
-| Codex | `~/.codex` |
-| Claude Code | `~/.claude` |
-| Cursor | `~/.cursor` |
+| エージェント | 検出ディレクトリ | 備考 |
+|-------|-------------------|-------|
+| Gemini CLI | `~/.gemini` | 基底ディレクトリを確認 |
+| GitHub Copilot | `~/.copilot` または `.github` | いずれかのディレクトリを確認 |
+| Codex | `~/.codex` | 基底ディレクトリを確認 |
+| Claude Code | `~/.claude` | 基底ディレクトリを確認 |
+| Cursor | `~/.cursor` | 基底ディレクトリを確認 |
 
 エージェントをインストール済みでもディレクトリが存在しない場合は、以下の対処法があります：
-1. ディレクトリを手動で作成: `mkdir -p ~/.gemini/skills`
-2. または `-a` オプションでエージェントを明示的に指定
+1. 基底ディレクトリを手動で作成: `mkdir -p ~/.gemini` (スキルは`~/.gemini/skills`にインストールされます)
+2. または `-a` オプションでエージェントを明示的に指定 (推奨)
 
 ### 利用可能なエージェント一覧を確認
 
