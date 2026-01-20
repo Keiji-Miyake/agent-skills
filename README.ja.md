@@ -15,6 +15,10 @@ npx add-skill Keiji-Miyake/agent-skills --skill dev-support
 
 # グローバルにインストール（全てのプロジェクトで利用可能）
 npx add-skill Keiji-Miyake/agent-skills -g
+
+# エージェントを明示的に指定（自動検出が機能しない場合）
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot -a codex
 ```
 
 ## 📦 利用可能なスキル
@@ -125,6 +129,47 @@ skills/skill-name/
 ├── references/           # 任意: 追加ドキュメント
 └── assets/              # 任意: テンプレートとリソース
 ```
+
+## 🔧 トラブルシューティング
+
+### インストール時にエージェントが検出されない
+
+> **注**: この問題は`add-skill`ツールのエージェント検出ロジックによるものです。このリポジトリ（agent-skills）の問題ではありません。
+
+`add-skill`でAIエージェントが自動検出されない場合は、`-a, --agent`オプションを使用して明示的に指定できます：
+
+```bash
+# Gemini CLIの場合
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+
+# GitHub Copilotの場合
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot
+
+# 複数のエージェントを指定
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
+```
+
+**なぜエージェントが検出されないのか？**
+
+`add-skill`ツールは、各エージェントの設定ディレクトリの存在を確認してエージェントを検出します：
+
+| エージェント | 検出ディレクトリ | 備考 |
+|-------|-------------------|-------|
+| Gemini CLI | `~/.gemini` | 基底ディレクトリを確認 |
+| GitHub Copilot | `~/.copilot` または `.github` | いずれかのディレクトリを確認 |
+| Codex | `~/.codex` | 基底ディレクトリを確認 |
+| Claude Code | `~/.claude` | 基底ディレクトリを確認 |
+| Cursor | `~/.cursor` | 基底ディレクトリを確認 |
+
+エージェントをインストール済みでもディレクトリが存在しない場合は、以下の対処法があります：
+1. 基底ディレクトリを手動で作成: `mkdir -p ~/.gemini` (スキルは`~/.gemini/skills`にインストールされます)
+2. または `-a` オプションでエージェントを明示的に指定 (推奨)
+
+**まとめ**: Gemini CLIがインストール済みでも`~/.gemini`ディレクトリが存在しない場合、`add-skill`はGemini CLIを検出できません。この場合、`-a gemini-cli`オプションを使用して明示的に指定することで、Gemini CLIへのスキルインストールが可能になります。
+
+### 利用可能なエージェント一覧を確認
+
+サポートされている全てのエージェントとインストールパスは、上記の[インストールパス](#-インストールパス)セクションをご確認ください。
 
 ## 🤝 貢献
 

@@ -18,6 +18,10 @@ npx add-skill Keiji-Miyake/agent-skills --skill dev-support
 
 # Install globally (available to all projects)
 npx add-skill Keiji-Miyake/agent-skills -g
+
+# Specify agent explicitly (if auto-detection doesn't work)
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot -a codex
 ```
 
 ## 📦 Available Skills
@@ -96,6 +100,47 @@ skills/skill-name/
 ├── references/           # Optional: Additional documentation
 └── assets/              # Optional: Templates and resources
 ```
+
+## 🔧 Troubleshooting
+
+### Agent not detected during installation
+
+> **Note**: This is due to the `add-skill` tool's agent detection logic. This is not an issue with this repository (agent-skills).
+
+If your AI agent is not automatically detected by `add-skill`, you can specify it explicitly using the `-a, --agent` option:
+
+```bash
+# For Gemini CLI
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+
+# For GitHub Copilot
+npx add-skill Keiji-Miyake/agent-skills -a github-copilot
+
+# For multiple agents
+npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
+```
+
+**Why isn't my agent detected?**
+
+The `add-skill` tool detects agents by checking for their configuration directories:
+
+| Agent | Detection Directory | Notes |
+|-------|-------------------|-------|
+| Gemini CLI | `~/.gemini` | Checks for base directory |
+| GitHub Copilot | `~/.copilot` or `.github` | Checks for either directory |
+| Codex | `~/.codex` | Checks for base directory |
+| Claude Code | `~/.claude` | Checks for base directory |
+| Cursor | `~/.cursor` | Checks for base directory |
+
+If you have installed an agent but the directory doesn't exist, you can:
+1. Create the base directory manually: `mkdir -p ~/.gemini` (skills will be installed to `~/.gemini/skills`)
+2. Or use the `-a` option to specify the agent explicitly (recommended)
+
+**Summary**: If Gemini CLI is installed but the `~/.gemini` directory doesn't exist, `add-skill` cannot detect it. In this case, you can use the `-a gemini-cli` option to explicitly specify Gemini CLI for skill installation.
+
+### View all available agents
+
+To see all supported agents and their installation paths, check the [Installation Paths](#-installation-paths) section above.
 
 ## 🤝 Contributing
 
