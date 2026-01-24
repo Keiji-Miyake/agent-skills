@@ -106,11 +106,11 @@ const readmeMd = `# ${skillName.split('-').map(w => w.charAt(0).toUpperCase() + 
 ## Installation
 
 \`\`\`bash
-# Install with add-skill
-npx add-skill Keiji-Miyake/agent-skills --skill ${skillName}
+# Install with skills
+npx skills add Keiji-Miyake/agent-skills --skill ${skillName}
 
 # Install globally
-npx add-skill Keiji-Miyake/agent-skills --skill ${skillName} -g
+npx skills add Keiji-Miyake/agent-skills --skill ${skillName} -g
 \`\`\`
 
 ## Usage

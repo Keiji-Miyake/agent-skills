@@ -96,7 +96,7 @@ npm run validate
 npm run test dev-support
 
 # AI エージェントでの手動テスト
-npx add-skill . --skill dev-support -a github-copilot
+npx skills add . --skill dev-support -a github-copilot
 ```
 
 ### 検証ルール
@@ -143,7 +143,7 @@ AI エージェントは、必要なときだけリファレンスを読み込�
 
 ```bash
 cd /tmp/test-project
-npx add-skill /path/to/agent-skills --skill dev-support
+npx skills add /path/to/agent-skills --skill dev-support
 gh copilot
 ```
 
@@ -151,7 +151,7 @@ gh copilot
 
 ```bash
 cd /tmp/test-project
-npx add-skill /path/to/agent-skills --skill dev-support -a claude-code
+npx skills add /path/to/agent-skills --skill dev-support -a claude-code
 claude-code
 ```
 
@@ -266,7 +266,7 @@ npm run validate
 
 1. ディレクトリ構造を確認する
 2. SKILL.md に有効なフロントマターがあるか確認する
-3. `add-skill` を直接使用してテストする
+3. `skills add` を直接使用してテストする
 4. AI エージェントのログを確認する
 
 ### トークン制限を超えた
@@ -333,6 +333,6 @@ git push --tags
 ## リソース
 
 - [Agent Skills Specification](https://agentskills.io)
-- [add-skill Documentation](https://github.com/vercel-labs/add-skill)
+- [skills Documentation](https://github.com/vercel-labs/skills)
 - [GitHub Copilot Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
 - [Claude Code Skills](https://code.claude.com/docs/en/skills)

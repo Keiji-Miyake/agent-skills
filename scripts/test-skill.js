@@ -80,9 +80,9 @@ console.log();
 // Installation instructions
 console.log(chalk.bold('Installation Commands:'));
 console.log(chalk.gray('  Project-level:'));
-console.log(chalk.cyan(`    npx add-skill Keiji-Miyake/agent-skills --skill ${skillName}`));
+console.log(chalk.cyan(`    npx skills add Keiji-Miyake/agent-skills --skill ${skillName}`));
 console.log(chalk.gray('  Global:'));
-console.log(chalk.cyan(`    npx add-skill Keiji-Miyake/agent-skills --skill ${skillName} -g`));
+console.log(chalk.cyan(`    npx skills add Keiji-Miyake/agent-skills --skill ${skillName} -g`));
 console.log();
 
 // Token efficiency analysis

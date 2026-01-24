@@ -4,21 +4,21 @@ AIコーディングアシスタント向けの再利用可能なエージェン
 
 ## 🚀 クイックスタート
 
-[add-skill](https://github.com/vercel-labs/add-skill) を使用してスキルをインストールします：
+[skills](https://github.com/vercel-labs/skills) を使用してスキルをインストールします：
 
 ```bash
 # 全てのスキルをインストール
-npx add-skill Keiji-Miyake/agent-skills
+npx skills add Keiji-Miyake/agent-skills
 
 # 特定のスキルをインストール
-npx add-skill Keiji-Miyake/agent-skills --skill dev-support
+npx skills add Keiji-Miyake/agent-skills --skill dev-support
 
 # グローバルにインストール（全てのプロジェクトで利用可能）
-npx add-skill Keiji-Miyake/agent-skills -g
+npx skills add Keiji-Miyake/agent-skills -g
 
 # エージェントを明示的に指定（自動検出が機能しない場合）
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
-npx add-skill Keiji-Miyake/agent-skills -a github-copilot -a codex
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli
+npx skills add Keiji-Miyake/agent-skills -a github-copilot -a codex
 ```
 
 ## 📦 利用可能なスキル
@@ -134,24 +134,24 @@ skills/skill-name/
 
 ### インストール時にエージェントが検出されない
 
-> **注**: この問題は`add-skill`ツールのエージェント検出ロジックによるものです。このリポジトリ（agent-skills）の問題ではありません。
+> **注**: この問題は`skills`ツールのエージェント検出ロジックによるものです。このリポジトリ（agent-skills）の問題ではありません。
 
-`add-skill`でAIエージェントが自動検出されない場合は、`-a, --agent`オプションを使用して明示的に指定できます：
+`skills add`でAIエージェントが自動検出されない場合は、`-a, --agent`オプションを使用して明示的に指定できます：
 
 ```bash
 # Gemini CLIの場合
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli
 
 # GitHub Copilotの場合
-npx add-skill Keiji-Miyake/agent-skills -a github-copilot
+npx skills add Keiji-Miyake/agent-skills -a github-copilot
 
 # 複数のエージェントを指定
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli -a codex
 ```
 
 **なぜエージェントが検出されないのか？**
 
-`add-skill`ツールは、各エージェントの設定ディレクトリの存在を確認してエージェントを検出します：
+`skills`ツールは、各エージェントの設定ディレクトリの存在を確認してエージェントを検出します：
 
 | エージェント | 検出ディレクトリ | 備考 |
 |-------|-------------------|-------|
@@ -165,7 +165,7 @@ npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
 1. 基底ディレクトリを手動で作成: `mkdir -p ~/.gemini` (スキルは`~/.gemini/skills`にインストールされます)
 2. または `-a` オプションでエージェントを明示的に指定 (推奨)
 
-**まとめ**: Gemini CLIがインストール済みでも`~/.gemini`ディレクトリが存在しない場合、`add-skill`はGemini CLIを検出できません。この場合、`-a gemini-cli`オプションを使用して明示的に指定することで、Gemini CLIへのスキルインストールが可能になります。
+**まとめ**: Gemini CLIがインストール済みでも`~/.gemini`ディレクトリが存在しない場合、`skills`はGemini CLIを検出できません。この場合、`-a gemini-cli`オプションを使用して明示的に指定することで、Gemini CLIへのスキルインストールが可能になります。
 
 ### 利用可能なエージェント一覧を確認
 
@@ -200,7 +200,7 @@ MITライセンス - 詳細は [LICENSE](./LICENSE) をご覧ください。
 ## 🔗 関連リンク
 
 - [Agent Skills Specification](https://agentskills.io)
-- [add-skill CLI tool](https://github.com/vercel-labs/add-skill)
+- [skills CLI tool](https://github.com/vercel-labs/skills)
 - [GitHub Copilot Agent Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
 - [Claude Code Skills](https://code.claude.com/docs/en/skills)
 - [SkillsMP Marketplace](https://skillsmp.com)

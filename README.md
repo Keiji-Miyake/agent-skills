@@ -7,21 +7,21 @@ A collection of reusable agent skills for AI coding assistants. Compatible with 
 
 ## 🚀 Quick Start
 
-Install skills using [add-skill](https://github.com/vercel-labs/add-skill):
+Install skills using [skills](https://github.com/vercel-labs/skills):
 
 ```bash
 # Install all skills
-npx add-skill Keiji-Miyake/agent-skills
+npx skills add Keiji-Miyake/agent-skills
 
 # Install specific skill
-npx add-skill Keiji-Miyake/agent-skills --skill dev-support
+npx skills add Keiji-Miyake/agent-skills --skill dev-support
 
 # Install globally (available to all projects)
-npx add-skill Keiji-Miyake/agent-skills -g
+npx skills add Keiji-Miyake/agent-skills -g
 
 # Specify agent explicitly (if auto-detection doesn't work)
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
-npx add-skill Keiji-Miyake/agent-skills -a github-copilot -a codex
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli
+npx skills add Keiji-Miyake/agent-skills -a github-copilot -a codex
 ```
 
 ## 📦 Available Skills
@@ -105,24 +105,24 @@ skills/skill-name/
 
 ### Agent not detected during installation
 
-> **Note**: This is due to the `add-skill` tool's agent detection logic. This is not an issue with this repository (agent-skills).
+> **Note**: This is due to the `skills` tool's agent detection logic. This is not an issue with this repository (agent-skills).
 
-If your AI agent is not automatically detected by `add-skill`, you can specify it explicitly using the `-a, --agent` option:
+If your AI agent is not automatically detected by `skills add`, you can specify it explicitly using the `-a, --agent` option:
 
 ```bash
 # For Gemini CLI
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli
 
 # For GitHub Copilot
-npx add-skill Keiji-Miyake/agent-skills -a github-copilot
+npx skills add Keiji-Miyake/agent-skills -a github-copilot
 
 # For multiple agents
-npx add-skill Keiji-Miyake/agent-skills -a gemini-cli -a codex
+npx skills add Keiji-Miyake/agent-skills -a gemini-cli -a codex
 ```
 
 **Why isn't my agent detected?**
 
-The `add-skill` tool detects agents by checking for their configuration directories:
+The `skills` tool detects agents by checking for their configuration directories:
 
 | Agent | Detection Directory | Notes |
 |-------|-------------------|-------|
@@ -136,7 +136,7 @@ If you have installed an agent but the directory doesn't exist, you can:
 1. Create the base directory manually: `mkdir -p ~/.gemini` (skills will be installed to `~/.gemini/skills`)
 2. Or use the `-a` option to specify the agent explicitly (recommended)
 
-**Summary**: If Gemini CLI is installed but the `~/.gemini` directory doesn't exist, `add-skill` cannot detect it. In this case, you can use the `-a gemini-cli` option to explicitly specify Gemini CLI for skill installation.
+**Summary**: If Gemini CLI is installed but the `~/.gemini` directory doesn't exist, `skills` cannot detect it. In this case, you can use the `-a gemini-cli` option to explicitly specify Gemini CLI for skill installation.
 
 ### View all available agents
 
@@ -171,7 +171,7 @@ MIT License - see [LICENSE](./LICENSE) for details.
 ## 🔗 Related Links
 
 - [Agent Skills Specification](https://agentskills.io)
-- [add-skill CLI tool](https://github.com/vercel-labs/add-skill)
+- [skills CLI tool](https://github.com/vercel-labs/skills)
 - [GitHub Copilot Agent Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
 - [Claude Code Skills](https://code.claude.com/docs/en/skills)
 - [SkillsMP Marketplace](https://skillsmp.com)

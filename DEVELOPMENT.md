@@ -96,7 +96,7 @@ npm run validate
 npm run test dev-support
 
 # Manual testing with AI agent
-npx add-skill . --skill dev-support -a github-copilot
+npx skills add . --skill dev-support -a github-copilot
 ```
 
 ### Validation Rules
@@ -143,7 +143,7 @@ The AI agent loads references only when needed.
 
 ```bash
 cd /tmp/test-project
-npx add-skill /path/to/agent-skills --skill dev-support
+npx skills add /path/to/agent-skills --skill dev-support
 gh copilot
 ```
 
@@ -151,7 +151,7 @@ gh copilot
 
 ```bash
 cd /tmp/test-project
-npx add-skill /path/to/agent-skills --skill dev-support -a claude-code
+npx skills add /path/to/agent-skills --skill dev-support -a claude-code
 claude-code
 ```
 
@@ -266,7 +266,7 @@ npm run validate
 
 1. Check directory structure
 2. Verify SKILL.md has valid frontmatter
-3. Test with `add-skill` directly
+3. Test with `skills add` directly
 4. Check AI agent logs
 
 ### Token Limit Exceeded
@@ -333,6 +333,6 @@ git push --tags
 ## Resources
 
 - [Agent Skills Specification](https://agentskills.io)
-- [add-skill Documentation](https://github.com/vercel-labs/add-skill)
+- [skills Documentation](https://github.com/vercel-labs/skills)
 - [GitHub Copilot Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
 - [Claude Code Skills](https://code.claude.com/docs/en/skills)
