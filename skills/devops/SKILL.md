@@ -31,7 +31,9 @@ metadata:
 
 ### Phase 1: インフラ構成 (Infrastructure Setup)
 
-プロジェクトのディレクトリにある設定ファイルを確認し、環境をセットアップします。
+1.  **規約確認**: `AGENTS.md` を読み、インフラやセキュリティに関する特定の指示がないか確認します。
+2.  **引き継ぎ確認**: `docs/dev/[feature-name]/CONTEXT.md` を読み、デプロイに必要な環境変数、シークレット、依存関係などの情報を確認します。
+3.  **環境セットアップ**: プロジェクトのディレクトリにある設定ファイルを確認し、環境をセットアップします。
 
 -   **Cloudflare Workers**: `wrangler.toml` / `wrangler.jsonc`
 -   **Docker**: `Dockerfile`, `docker-compose.yml`
