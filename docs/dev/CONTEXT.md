@@ -1,24 +1,21 @@
 # Development Context
 
 ## 前回のセッション
-- 日時: 2026-01-19
-- 作業時間: 14:48 - 17:00 (132 min)
-- タスク: 役割別エージェントスキル (Architect, Developer, QA, DevOps) の作成とワークフロー整備
+- 日時: 2026-02-02
+- 作業内容: ブログ執筆支援スキルの作成と疎結合化
+- 成果物: `blog-writer`, `tech-storyteller`, `docs/dev/blog-skills/`
 
 ## 進捗
 - **完了**:
-    - `skills/architect/`: 要件定義・設計スキル作成
-    - `skills/developer/`: 実装スキル作成（ポリグロット対応）
-    - `skills/qa/`: テスト・品質保証スキル作成
-    - `skills/devops/`: インフラ・デプロイスキル作成
-    - `skills/dev-support/`: AIレビューフロー（Github Copilot CLI等）の追加
-    - `AGENTS.md`: プロジェクト指示書の作成と旧 `.agent/instructions.md` からの移行
-    - `README.ja.md`: 新スキルのドキュメント追加
+    - `skills/blog-writer/`: 執筆・編集専用開発
+    - `skills/tech-storyteller/`: 履歴解析・素材収集開発
+    - `docs/dev/blog-skills/`: 要件・設計・ウォークスルー作成
+    - `CHANGELOG.md`: 更新完了
 
 ## 技術メモ
-- **AIレビューの義務化**: `dev-support` スキルにて、成果物をユーザーに見せる前にAI CLIツールでセルフチェックを行うフローを確立。
-- **プラットフォーム非依存**: 各スキルは特定の技術（Cloudflare等）に依存せず、汎用的に使えるように設計（SPEC作成時に修正済み）。
+- **スキルの疎結合化**: 素材収集と執筆を分離することで、各スキルの単一責任を追求し、再利用性を向上させた。Markdownを共通インターフェースとして採用。
+- **デモによる検証**: 分割されたスキルの連携により、開発履歴から高品質なブログ記事が生成できることを実証。
 
 ## 次のセッション (優先順位順)
-1. 実際のプロジェクトでの試験運用とフィードバック収集
-2. スキルの改善（必要に応じて）
+1. 作成したスキルの実際のブログ執筆での継続利用
+2. `db-architect` や `task-planner` 等、さらに専門特化したスキルの検討

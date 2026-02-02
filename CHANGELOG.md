@@ -10,6 +10,8 @@
     - `developer`: ポリグロット対応の実装、リファクタリング
     - `qa`: テスト計画、自動テスト実装、エッジケース検証
     - `devops`: IaC、CI/CDパイプライン構築
+    - `blog-writer`: 技術ブログの執筆・編集（SEO、Mermaid図解対応）
+    - `tech-storyteller`: リポジトリ履歴からの素材収集
 - **AGENTS.md**: エージェント向け指示書（日本語出力、コミットメッセージルール）
 
 ### Changed
