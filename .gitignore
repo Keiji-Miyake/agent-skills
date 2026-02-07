@@ -46,3 +46,6 @@ build/
 .gemini/skills/
 .github/skills/
 .opencode/skills/
+
+# Skill examples (generated outputs)
+skills/*/examples/
