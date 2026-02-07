@@ -12,6 +12,10 @@
     - `devops`: IaC、CI/CDパイプライン構築
     - `blog-writer`: 技術ブログの執筆・編集（SEO、Mermaid図解対応）
     - `tech-storyteller`: リポジトリ履歴からの素材収集
+    - `tech-writer`: 技術ブログ執筆支援（既存スキルのブログ化等）
+    - `dev-ready`: 開発開始前チェック（Status, Context, Taskの自動確認）
+- **Workflows**:
+    - `dev-ready`: Gemini CLI向けの初期化・現状確認ワークフロー
 - **AGENTS.md**: エージェント向け指示書（日本語出力、コミットメッセージルール）
 
 ### Changed
