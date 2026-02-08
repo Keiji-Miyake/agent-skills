@@ -31,7 +31,7 @@ metadata:
 ### Phase 0: コンテキストの把握 (Context Loading)
 
 作業を開始する前に、必ず以下のファイルを確認してください。
-1.  **`AGENTS.md`**: `Project Instructions` セクションを読み、プロジェクト全体の規約と自分の役割を再確認します。
+1.  **`.agent/rules/`**: `general-rules.md` を読み、プロジェクト全体の規約と自分の役割を再確認します。
 2.  **`docs/dev/[feature-name]/CONTEXT.md`**: 前回のセッションからの継続作業の場合、現在の進捗と次のアクションを把握します。
 
 ### Phase 1: ヒアリングと要件定義 (Requirements)

@@ -31,7 +31,7 @@ metadata:
 ### Phase 1: テスト分析と計画 (Analysis & Planning)
 
 テストを開始する前に以下を読み込みます：
-1.  **`AGENTS.md`**: 全体規約の確認。
+1.  **`.agent/rules/general-rules.md`**: 全体規約の確認。
 2.  **`docs/dev/[feature-name]/SPEC.md`**: 実装された機能の仕様把握。
 3.  **`docs/dev/[feature-name]/CONTEXT.md`**: Developer からの引き継ぎ事項や注意点の確認。
 
